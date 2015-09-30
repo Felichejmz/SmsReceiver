@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SmsReceiver</string>
+    <string name="hello_world">Buzon de entrada SMS</string>
+    <string name="action_settings">Settings</string>
+</resources>
