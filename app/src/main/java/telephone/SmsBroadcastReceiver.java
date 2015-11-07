@@ -1,4 +1,4 @@
-package com.example.feliche.smsreceiver;
+package telephone;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
+
+import com.example.feliche.smsreceiver.MainActivity;
 
 public class SmsBroadcastReceiver extends BroadcastReceiver {
     public static final String SMS_BUNDLE = "pdus";

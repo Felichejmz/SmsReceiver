@@ -22,7 +22,7 @@
         </activity>
 
         <receiver
-            android:name=".SmsBroadcastReceiver"
+            android:name="telephone.SmsBroadcastReceiver"
             android:enabled="true"
             android:exported="true" >
             <intent-filter android:priority="999" >
@@ -31,7 +31,7 @@
         </receiver>
 
         <receiver
-            android:name=".NetworkConnectivityReceiver"
+            android:name="telephone.NetworkConnectivityReceiver"
             android:enabled="true"
             android:exported="true" >
             <intent-filter>

@@ -1,10 +1,10 @@
 package com.example.feliche.smsreceiver;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
     private static MainActivity inst;
     ArrayList<String> smsMessagesList = new ArrayList<String>();
     ListView smsListView;
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int indexAddress = smsInboxCursor.getColumnIndex("address");
         if(indexBody < 0 || !smsInboxCursor.moveToFirst())
             return;
+
         arrayAdapter.clear();
         do{
             String str = "SMS From: " + smsInboxCursor.getString(indexAddress) +
@@ -83,9 +84,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             for(int i = 1; i < smsMessages.length; ++i){
                 smsMessage += smsMessages[i];
             }
-            String smsMessageStr = address + "n";
+            String smsMessageStr = address + "\n";
             smsMessageStr += smsMessage;
-            Toast.makeText(this, smsMessageStr,Toast.LENGTH_LONG);
+            Toast.makeText(this, smsMessageStr,Toast.LENGTH_LONG).show();
         }catch (Exception e){
             e.printStackTrace();
         }

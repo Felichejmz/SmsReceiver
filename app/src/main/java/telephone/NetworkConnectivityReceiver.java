@@ -1,4 +1,4 @@
-package com.example.feliche.smsreceiver;
+package telephone;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,12 +7,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-import java.util.logging.Handler;
+import com.example.feliche.smsreceiver.MainActivity;
 
 public class NetworkConnectivityReceiver extends BroadcastReceiver {
     private static final String TAG = "NET_CONN_LIST: ";
     private NetworkInfo networkInfo;
     private NetworkInfo networkInfo_2;
+
     //private Boolean mListener = ;
     private State mState;
     private String mReason;
@@ -50,7 +51,6 @@ public class NetworkConnectivityReceiver extends BroadcastReceiver {
             Log.d(TAG, networkInfo_2 == null ? "[none]" : networkInfo_2 + "noConn=" +
                     noConnectivity + mState.toString());
         }
-
         MainActivity inst = MainActivity.instance();
         inst.updateNetworkStatus(networkInfo.getState());
     }
